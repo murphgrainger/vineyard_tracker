@@ -1,7 +1,7 @@
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('vineyard', function(table) {
         table.increments();
-        table.string('name');
+        table.string('name').notNullable();
         table.string('address');
         table.string('phone');
         table.string('website');
