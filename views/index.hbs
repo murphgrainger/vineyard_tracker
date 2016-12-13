@@ -1,2 +1,20 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{#if vineyards}}
+    <table>
+        <tr>
+            <th>Vineyard Visited</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+        {{#each vineyards}}
+            <tr>
+                <td class="vineyard">{{name}}</td>
+                <td>{{address}}</td>
+                <td>{{phone}}</td>
+                <td>{{website}}</td>
+                <!-- <td>{{visit_date}}</td> -->
+            </tr>
+        {{/each}}
+    </table>
+{{else}}
+    <p>No vineyards!</p>
+{{/if}}
