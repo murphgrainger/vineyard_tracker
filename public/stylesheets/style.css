@@ -80,6 +80,10 @@ tr .vineyard {
     font-weight: 700;
 }
 
+vineyard-contact {
+  list-style: none;
+}
+
 /* Footer Styles */
 footer {
     display: flex;

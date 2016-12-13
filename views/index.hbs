@@ -1,3 +1,5 @@
+<h2><a href="/add">Add Vineyard</a></h2>
+
 {{#if vineyards}}
     <table>
         <tr>
@@ -6,7 +8,7 @@
         </tr>
         {{#each vineyards}}
             <tr>
-                <td class="vineyard"><a href="1">{{name}}</a></td>
+                <td class="vineyard"><a href="/{{this.id}}">{{name}}</a></td>
                 <td>{{website}}</td>
                 <!-- <td>{{visit_date}}</td> -->
             </tr>
