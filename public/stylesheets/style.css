@@ -43,6 +43,19 @@ h1 a {
   height: 30em;
 }
 
+.add-btn {
+  margin-top: 2em;
+}
+
+.edit-btn {
+  margin: 1em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Body Styles */
 main {
   display: flex;
