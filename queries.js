@@ -4,10 +4,11 @@ module.exports = {
     // Return a promise that gets all breweries
     getVineyards: function() {
         return knex('vineyard');
-    }
-}, {
-    delete: function(id) {
-        console.log('this is running');
+    },
+    vineyardEdit: function() {
+        return knex('vineyard').where('id', id);
+    },
+    vineyardDelete: function(id) {
         return knex('vineyard').where("id", id).del();
     }
 };

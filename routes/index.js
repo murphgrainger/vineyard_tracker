@@ -27,7 +27,7 @@ router.post('/', function(req, res, next) {
             visit_date: req.body.visit_date
         }, 'id')
         .then(function(vineyard) {
-            res.redirect('/vineyard/' + vineyard)
+            res.redirect('/vineyard/' + vineyard);
         });
 });
 
@@ -40,9 +40,14 @@ router.get("/vineyard/:id", function(req, res, next) {
         });
 });
 
-router.delete('/delete', function(req, res, next) {
-    console.log('mamma');
-    db.delete(req.params.id).then(function() {
+router.put('/vineyard/:id', function(req, res, next) {
+    queries.vineyardEdit(req.params.id).then(function() {
+        res.redirect('/vineyard');
+    });
+});
+
+router.delete('/vineyard/:id', function(req, res, next) {
+    queries.vineyardDelete(req.params.id).then(function() {
         res.redirect('/vineyard');
     });
 });

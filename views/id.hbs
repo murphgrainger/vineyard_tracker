@@ -8,5 +8,12 @@
 <li>{{vineyard.visit_date}}</li>
 </ul>
 
-<h5><a href="/">Edit</a></h5>
-<h5><a href="/vineyard/{{this.id}}">Delete</a></h5>
+<form action="/vineyard/{{vineyard.id}}?_method=put" method="POST">
+  <button class="btn waves-effect waves-light" type="submit" name="action">Edit
+  </button>
+</form>
+
+<form action="/vineyard/{{vineyard.id}}?_method=delete" method="POST">
+  <button class="btn waves-effect waves-light" type="submit" name="action">Delete
+  </button>
+</form>
