@@ -45,6 +45,7 @@ router.get("/vineyard/:id/edit", function(req, res, next) {
 
 
 router.put('/vineyard/:id', function(req, res, next) {
+    console.log(req.body);
     knex('vineyard').where('id', req.params.id).update(req.body)
         .then(function() {
             res.redirect('/vineyard/' + req.params.id);
