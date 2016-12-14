@@ -11,7 +11,9 @@ body {
 
 /* Header Styles */
 header {
-  display: flex;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   background-color: #6d0202;
   width: 100%;
@@ -24,6 +26,14 @@ h1 a {
   color: white;
 }
 
+.add-vineyard {
+  margin-right: 2em;
+}
+
+.edit-button {
+  margin-bottom: 1em;
+}
+
 /* Body Styles */
 main {
   display: flex;
@@ -31,7 +41,7 @@ main {
   justify-content: center;
   flex: 1;
     height: 100%;
-    padding: 1em;
+    padding: 2em;
     box-sizing: border-box;
 }
 nav ul {

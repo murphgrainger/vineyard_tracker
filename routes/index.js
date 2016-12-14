@@ -41,9 +41,10 @@ router.get("/vineyard/:id/edit", function(req, res, next) {
 
 
 router.put('/vineyard/:id', function(req, res, next) {
-    queries.vineyardEdit(req.params.id, req.body).then(function() {
-        res.redirect(`/vineyard/ + ${vineyard.id}`);
-    });
+    knex('vineyard').where('id', req.params.id).update(req.body)
+        .then(function() {
+            res.redirect('/vineyard/' + req.params.id);
+        });
 });
 
 router.delete('/vineyard/:id', function(req, res, next) {
