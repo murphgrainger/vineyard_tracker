@@ -16,7 +16,7 @@ router.get("/add", function(request, response, next) {
     response.render("add");
 });
 
-router.post('/', function(req, res, next) {
+router.post('/vineyard', function(req, res, next) {
     knex('vineyard').insert({
             name: req.body.name,
             address: req.body.address,
@@ -31,18 +31,18 @@ router.post('/', function(req, res, next) {
         });
 });
 
-router.get("/vineyard/:id", function(req, res, next) {
-    knex('vineyard').where('id', req.params.id).first()
-        .then(function(data) {
-            res.render('id', {
-                vineyard: data
-            });
+router.get("/vineyard/:id/edit", function(req, res, next) {
+    knex('vineyard').select().where('id', req.params.id).first().then(function(data) {
+        res.render('edit', {
+            vineyard: data
         });
+    });
 });
 
+
 router.put('/vineyard/:id', function(req, res, next) {
-    queries.vineyardEdit(req.params.id).then(function() {
-        res.redirect('/vineyard');
+    queries.vineyardEdit(req.params.id, req.body).then(function() {
+        res.redirect(`/vineyard/ + ${vineyard.id}`);
     });
 });
 
@@ -50,6 +50,15 @@ router.delete('/vineyard/:id', function(req, res, next) {
     queries.vineyardDelete(req.params.id).then(function() {
         res.redirect('/vineyard');
     });
+});
+
+router.get("/vineyard/:id", function(req, res, next) {
+    knex('vineyard').where('id', req.params.id).first()
+        .then(function(data) {
+            res.render('id', {
+                vineyard: data
+            });
+        });
 });
 
 
