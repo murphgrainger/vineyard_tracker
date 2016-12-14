@@ -1,14 +1,18 @@
-<h2><a href="/add">Add Vineyard</a></h2>
+<h5><a href="/add">Add Vineyard</a></h5>
 
 {{#if vineyards}}
     <table>
         <tr>
             <th>Vineyard Visited</th>
+            <th>Address</th>
+            <th>Phone</th>
             <th>Website</th>
         </tr>
         {{#each vineyards}}
             <tr>
-                <td class="vineyard"><a href="/{{this.id}}">{{name}}</a></td>
+                <td class="vineyard"><a href="/vineyard/{{this.id}}">{{name}}</a></td>
+                <td>{{address}}</td>
+                <td>{{phone}}</td>
                 <td>{{website}}</td>
                 <!-- <td>{{visit_date}}</td> -->
             </tr>
