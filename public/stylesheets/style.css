@@ -31,7 +31,16 @@ h1 a {
 }
 
 .edit-button {
+  display: flex;
   margin-bottom: 1em;
+  align-self: center;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 30em;
 }
 
 /* Body Styles */
@@ -44,6 +53,7 @@ main {
     padding: 2em;
     box-sizing: border-box;
 }
+
 nav ul {
     -webkit-padding-start: 0;
 }

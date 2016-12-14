@@ -3,7 +3,11 @@ var router = express.Router();
 var queries = require("../queries");
 const knex = require('../db/knex');
 
-/* GET home page. */
+
+router.get("/", function(request, response, next) {
+    response.render("home");
+});
+
 router.get("/vineyard", function(request, response, next) {
     queries.getVineyards().then(function(vineyards) {
         response.render("index", {
