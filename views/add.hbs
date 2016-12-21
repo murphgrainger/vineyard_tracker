@@ -1,7 +1,7 @@
 <form class="form" action="/vineyard" method="POST">
-  <input type="text" placeholder="Vineyard Name"name="name" value="" id="name">
+  <input type="text" placeholder="Vineyard Name"name="name" value="" id="name" required>
   <input type="text" placeholder="Address" name="address" value="" id="address">
-  <input type="text" placeholder="Phone Number" name="phone" value="" id="phone">
+  <input type="tel" placeholder="Phone Number" name="phone" value="" id="phone" pattern="^\d{3}-\d{3}-\d{4}$">
   <input type="text" placeholder="Website" name="website" value="" id="website">
 
   <div class="radio1">

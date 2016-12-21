@@ -1,7 +1,7 @@
 <form class="form" action="/vineyard/{{vineyard.id}}?_method=put" method="POST">
-  <input type="text" placeholder="Vineyard Name"name="name" value="{{vineyard.name}} "id="name">
+  <input type="text" placeholder="Vineyard Name"name="name" value="{{vineyard.name}} "id="name" required>
   <input type="text" placeholder="Address" name="address" value="{{vineyard.address}}" id="address">
-  <input type="text" placeholder="Phone Number" name="phone" value="{{vineyard.phone}}" id="phone">
+  <input type="tel" placeholder="Phone Number" name="phone" value="{{vineyard.phone}}" id="phone" pattern="^\d{3}-\d{3}-\d{4}$">
   <input type="text" placeholder="Website" name="website" value="{{vineyard.website}}" id="website">
   <div class="radio1">
   <p> Did you have an appointment? </p>
